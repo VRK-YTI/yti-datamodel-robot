@@ -671,24 +671,33 @@ Add Attribute
     [Arguments]    ${attribute}
     Wait Until Element Is Enabled    ${MODIFY_CLASS}    timeout=30
     Click Element    ${MODIFY_CLASS}
+    Log To Console    "Click modify class"
     Wait Until Element Is Enabled    ${ADD_PROPERTY_DDL}    timeout=30
     Click Element    ${ADD_PROPERTY_DDL}
+    Log To Console    "Click add property dorpdown"
     Wait Until Element Is Enabled    ${ADD_PROPERTY_BTN}    timeout=30
     Click Element    ${ADD_PROPERTY_BTN}
+    Log To Console    "Click add property"
     Sleep    2
     Wait Until Element Is Enabled    ${ALL_TYPES_DDL}    timeout=30
     Click Element    ${ALL_TYPES_DDL}
+    Log To Console    "Click types"
     Sleep    2
     Wait Until Element Is Enabled    //*[contains(text(), "Attribuutti")]    timeout=30
     Click Element    //*[contains(text(), "Attribuutti")]
+    Log To Console    "Click contains attribute"
     Wait Until Element Is Enabled    ${SEARCH_ATTRIBUTE_INPUT}    timeout=30
     Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${attribute}
+    Log To Console    "Input text"
     Wait Until Element Is Enabled    //*[contains(text(), "${attribute}")]    timeout=30
     Click Element    //*[contains(text(), "${attribute}")]
+    Log To Console    "Click contains attribute 2"
     Wait Until Element Is Enabled    //*[contains(text(), "Luo uusi attribuutti")]    timeout=30
     Click Element    //*[contains(text(), "Luo uusi attribuutti")]
-    Wait Until Element Is Enabled    ${CONFIRM_PREDICATE_BTN}    timeout=30
-    Click Element    ${CONFIRM_PREDICATE_BTN}
+    Log To Console    "Click luo uusi"
+    Wait Until Element Is Enabled    "searchConceptModalConfirmButton"    timeout=30
+    Click Element    "searchConceptModalConfirmButton"
+    Log To Console    "Click confirm"
     Sleep    2
 
 Create New Attribute
