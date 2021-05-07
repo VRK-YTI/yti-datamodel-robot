@@ -692,8 +692,8 @@ Add Attribute
     Wait Until Element Is Enabled    //*[contains(@id, "create_new_LisaaUusiAttribuutti")]    timeout=30
     Click Element    //*[contains(@id, "create_new_LisaaUusiAttribuutti")]
     Log To Console    "Click contains attribute 2"
-    Wait Until Element Is Enabled    //*[contains(text(), "Luo uusi attribuutti")]    timeout=30
-    Click Element    //*[contains(text(), "Luo uusi attribuutti")]
+    Wait Until Element Is Enabled    //*[contains(@id, "create_new_LuoUusiAttribuutti")]    timeout=30
+    Click Element    //*[contains(@id, "create_new_LuoUusiAttribuutti")]
     Log To Console    "Click luo uusi"
     Wait Until Element Is Enabled    "searchConceptModalConfirmButton"    timeout=30
     Click Element    "searchConceptModalConfirmButton"
