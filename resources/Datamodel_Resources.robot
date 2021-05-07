@@ -598,10 +598,8 @@ Add Sub Class
     Click Element    //*[contains(text(), "${model}")]
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    # TODO try without # in the id
-    # Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
-    Wait Until Element Is Enabled    //*[contains(@id,'Osoite_search_class_link')]    timeout=60
-    Click Element    //*[contains(@id,'Osoite_search_class_link')]
+    Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
+    Click Element    //*[contains(@id,'${class_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
     Click Element    ${ACTIONS_BTN}
     Log To Console    "Click actions"
