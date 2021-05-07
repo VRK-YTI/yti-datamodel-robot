@@ -602,8 +602,10 @@ Add Sub Class
     Click Element    //*[contains(@id,'${class_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
     Click Element    ${ACTIONS_BTN}
+    Log To Console    "Click actions"
     Wait Until Element Is Enabled    ${CREATE_SUB_CLASS_BTN}    timeout=30
     Click Element    ${CREATE_SUB_CLASS_BTN}
+    Log To Console    "Click create subclass"
 
 Add Super Class
     [Arguments]    ${model}    ${class}    ${class_link}
@@ -703,6 +705,36 @@ Add Attribute
     Log To Console    "Click confirm 2"
     Sleep    2
 
+Add Existing Attribute
+    [Arguments]    ${attribute}
+    Wait Until Element Is Enabled    ${MODIFY_CLASS}    timeout=30
+    Click Element    ${MODIFY_CLASS}
+    Log To Console    "Click modify class"
+    Wait Until Element Is Enabled    ${ADD_PROPERTY_DDL}    timeout=30
+    Click Element    ${ADD_PROPERTY_DDL}
+    Log To Console    "Click add property dropdown"
+    Wait Until Element Is Enabled    ${ADD_PROPERTY_BTN}    timeout=30
+    Click Element    ${ADD_PROPERTY_BTN}
+    Log To Console    "Click add property"
+    Sleep    2
+    Wait Until Element Is Enabled    ${ALL_TYPES_DDL}    timeout=30
+    Click Element    ${ALL_TYPES_DDL}
+    Log To Console    "Click types"
+    Sleep    2
+    Wait Until Element Is Enabled    //*[contains(text(), "Attribuutti")]    timeout=30
+    Click Element    //*[contains(text(), "Attribuutti")]
+    Log To Console    "Click contains attribute"
+    Wait Until Element Is Enabled    ${SEARCH_ATTRIBUTE_INPUT}    timeout=30
+    Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${attribute}
+    Log To Console    "Input text"
+    Wait Until Element Is Enabled    //*[contains(@id, "search_result_link")]    timeout=30
+    Click Element    //*[contains(@id, "search_result_link")]
+    Log To Console    "Click search result""
+    Wait Until Element Is Enabled    ${CONFIRM_PREDICATE_BTN}    timeout=30
+    Click Element    ${CONFIRM_PREDICATE_BTN} 
+    Log To Console    "Click confirm"
+    Sleep    2
+
 Create New Attribute
     [Arguments]    ${attribute}
     Wait Until Page Contains Element    ${ATTRIBUTE_TAB}    timeout=30
@@ -800,9 +832,10 @@ Add Association
     Wait Until Element Is Enabled    ${ALL_TYPES_DDL}    timeout=30
     Click Element    ${ALL_TYPES_DDL}
     Sleep    3
+    Log To Console    "Click types"
     Wait Until Element Is Enabled    //*[contains(text(), "Assosiaatio")]    timeout=30
     Click Element    //*[contains(text(), "Assosiaatio")]
-    Log To Console    "Click assosiaatio"
+    Log To Console    "Click contains assosiaatio"
     Wait Until Page Contains Element    ${SEARCH_ATTRIBUTE_INPUT}    timeout=30
     Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${association}
     Log To Console    "Input text"

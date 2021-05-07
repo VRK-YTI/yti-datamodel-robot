@@ -493,7 +493,7 @@ ${class_framed_json_ld_test}    blob:https://tietomallit.dev.yti.cloud.vrk.fi/ca
     Select Tab    ${CLASS_TAB}
     Wait Until Element Is Enabled    //*[contains(@id,'Testiluokka_tabset_link')]    timeout=60
     Click Element    //*[contains(@id,'Testiluokka_tabset_link')]
-    Add Attribute    Testiattribuutti
+    Add Existing Attribute    Testiattribuutti
     Save Class
     Select Tab    ${ATTRIBUTE_TAB}
     Wait Until Element Is Enabled    //*[contains(@id,'testiattribuutti_tabset_link')]    timeout=30
