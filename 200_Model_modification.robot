@@ -505,7 +505,7 @@ ${class_framed_json_ld_test}    blob:https://tietomallit.dev.yti.cloud.vrk.fi/ca
     Wait Until Page Contains Element    ${CONVERT_TO_ASSOCIATION}    timeout=30
     Click Element    ${CONVERT_TO_ASSOCIATION}
     Log To Console    "Convert button clicked"
-    Wait Until Page Contains    "muuttaa"    timeout=30
+    Wait Until Page Contains    ${predicate_change_error}    timeout=30
     Sleep    1
     Click Element    ${CLOSE_BTN}
     Wait Until Element Is Enabled    ${PREDICATE_EDIT_CANCEL_BTN}    timeout=30
