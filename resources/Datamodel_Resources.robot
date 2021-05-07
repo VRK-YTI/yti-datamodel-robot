@@ -674,7 +674,7 @@ Add Attribute
     Log To Console    "Click modify class"
     Wait Until Element Is Enabled    ${ADD_PROPERTY_DDL}    timeout=30
     Click Element    ${ADD_PROPERTY_DDL}
-    Log To Console    "Click add property dorpdown"
+    Log To Console    "Click add property dropdown"
     Wait Until Element Is Enabled    ${ADD_PROPERTY_BTN}    timeout=30
     Click Element    ${ADD_PROPERTY_BTN}
     Log To Console    "Click add property"
@@ -697,7 +697,10 @@ Add Attribute
     Log To Console    "Click luo uusi"
     Wait Until Element Is Enabled    id=searchConceptModalConfirmButton    timeout=30
     Click Element    id=searchConceptModalConfirmButton
-    Log To Console    "Click confirm"
+    Log To Console    "Click confirm 1"
+    Wait Until Element Is Enabled    ${CONFIRM_PREDICATE_BTN}    timeout=30
+    Click Element    ${CONFIRM_PREDICATE_BTN} 
+    Log To Console    "Click confirm 2"
     Sleep    2
 
 Create New Attribute
