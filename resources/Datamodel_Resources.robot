@@ -599,7 +599,7 @@ Add Sub Class
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
     Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
-    Click Element    //*[contains(@id,'${class_link}_search_class_link')]
+    Click Element    //*[contains(@id,'${class}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
     Click Element    ${ACTIONS_BTN}
     Log To Console    "Click actions"
