@@ -685,6 +685,8 @@ Add Attribute
     Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${attribute}
     Wait Until Element Is Enabled    //*[contains(text(), "${attribute}")]    timeout=30
     Click Element    //*[contains(text(), "${attribute}")]
+    Wait Until Element Is Enabled    //*[contains(text(), "Luo uusi attribuutti")]    timeout=30
+    Click Element    //*[contains(text(), "Luo uusi attribuutti")]
     Wait Until Element Is Enabled    ${CONFIRM_PREDICATE_BTN}    timeout=30
     Click Element    ${CONFIRM_PREDICATE_BTN}
     Sleep    2
