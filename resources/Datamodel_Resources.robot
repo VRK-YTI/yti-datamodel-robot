@@ -689,8 +689,8 @@ Add Attribute
     Wait Until Element Is Enabled    ${SEARCH_ATTRIBUTE_INPUT}    timeout=30
     Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${attribute}
     Log To Console    "Input text"
-    Wait Until Element Is Enabled    //*[contains(text(), "${attribute}")]    timeout=30
-    Click Element    //*[contains(text(), "${attribute}")]
+    Wait Until Element Is Enabled    //*[contains(text(), "uusi")]    timeout=30
+    Click Element    //*[contains(text(), "uusi")]
     Log To Console    "Click contains attribute 2"
     Wait Until Element Is Enabled    //*[contains(text(), "Luo uusi attribuutti")]    timeout=30
     Click Element    //*[contains(text(), "Luo uusi attribuutti")]
