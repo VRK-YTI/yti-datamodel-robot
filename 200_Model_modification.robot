@@ -870,7 +870,7 @@ ${class_framed_json_ld_test}    blob:https://tietomallit.dev.yti.cloud.vrk.fi/ca
     Wait Until Element Is Enabled    ${CREATE_NEW_NAMESPACE}    timeout=30
     Click Element    ${CREATE_NEW_NAMESPACE}
     Wait Until Page Contains Element    ${NAMESPACE_VALUE}    timeout=30
-    Input Text    ${NAMESPACE_VALUE}    http://uri.suomi.fi/datamodel/ns/iow#
+    Input Text    ${NAMESPACE_PREFIX}    iow
     Wait Until Page Contains    http://uri.suomi.fi/datamodel/ns/iow#    timeout=30
     Wait Until Element Is Enabled    ${NAMESPACE_LABEL}    timeout=30
     Input Text    ${NAMESPACE_LABEL}    namesapce_iow
