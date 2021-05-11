@@ -561,9 +561,10 @@ Add Class
     Click Element    ${CLASS_MODEL_DDL}
     Wait Until Element Is Visible    //*[contains(text(), "${model}")]    timeout=60
     Click Element    //*[contains(text(), "${model}")]
+    Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    1
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(text(), "${class}")]    timeout=60
     Click Element    //*[contains(text(), "${class}")]
     Sleep    2
@@ -578,14 +579,13 @@ Add several classes
         Click Element    ${ADD_NEW_CLASS}
         Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
         Input Text    ${SEARCH_CLASS_INPUT}    ${class_item}
+        Sleep  10
         Wait Until Page Contains Element    //*[contains(@id,'${class_item}_search_class_link')]    timeout=60
         Click Element    //*[contains(@id,'${class_item}_search_class_link')]
-        Sleep    2
+        Sleep  10
         Wait Until Page Contains Element    ${SPECIALIZE_CLASS}    timeout=30
         Click Element    ${SPECIALIZE_CLASS}
-        Sleep    1
         Confirm All Properties For Class And Save
-        Sleep    2
     END
 
 Add Sub Class
@@ -599,6 +599,7 @@ Add Sub Class
     Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${class_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -616,8 +617,10 @@ Add Super Class
     Click Element    ${CLASS_MODEL_DDL}
     Wait Until Element Is Visible    //*[contains(text(), "${model}")]    timeout=60
     Click Element    //*[contains(text(), "${model}")]
+    Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${class_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -633,8 +636,10 @@ Copy Class
     Click Element    ${CLASS_MODEL_DDL}
     Wait Until Element Is Visible    //*[contains(text(), "${model}")]    timeout=60
     Click Element    //*[contains(text(), "${model}")]
+    Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${class_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -918,9 +923,10 @@ Create New Class Without Referencing Concept
     [Arguments]    ${class}
     Wait Until Page Contains Element    ${ADD_NEW_CLASS}    timeout=30
     Click Element    ${ADD_NEW_CLASS}
+    Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    2
+    Sleep  10
     Wait Until Element Is Enabled    ${CREATE_NEW_CLASS_LINK}    timeout=60
     Click Element    ${CREATE_NEW_CLASS_LINK}
     Wait Until Element Is Enabled    ${CREATE_NEW_CLASS_WITHOUT_REF_LINK}    timeout=60
@@ -936,9 +942,10 @@ Create new class and suggest concept to terminologies
     [Arguments]    ${class}    ${concept_definition}
     Wait Until Page Contains Element    ${ADD_NEW_CLASS}    timeout=30
     Click Element    ${ADD_NEW_CLASS}
+    Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    2
+    Sleep  10
     Wait Until Element Is Enabled    ${CREATE_NEW_CLASS_LINK}    timeout=30
     Click Element    ${CREATE_NEW_CLASS_LINK}
     Wait Until Page Contains Element    ${SUGGEST_CONCEPT_TO_TERMINOLOGIES}    timeout=30
@@ -953,9 +960,10 @@ Create New Shape By Referencing External Uri
     [Arguments]    ${external_uri}    ${class}
     Wait Until Page Contains Element    ${ADD_NEW_CLASS}    timeout=30
     Click Element    ${ADD_NEW_CLASS}
+    Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    3
+    Sleep  10
     Wait Until Element Is Enabled    ${CREATE_NEW_SHAPE_BY_REF_URI}    timeout=30
     Sleep    1
     Click Element    ${CREATE_NEW_SHAPE_BY_REF_URI}
