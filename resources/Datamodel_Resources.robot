@@ -599,7 +599,6 @@ Add Sub Class
     Sleep  10
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${class_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${class_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
