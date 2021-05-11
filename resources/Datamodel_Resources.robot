@@ -654,8 +654,8 @@ Save Class
     Sleep    2
 
 Confirm All Properties For Class And Save
-    Wait Until Element Is Enabled    ${CONFIRM_ADD_PROPERTIES}    timeout=30
-    Click Element    ${CONFIRM_ADD_PROPERTIES}
+    run keyword and ignore error  Wait Until Element Is Enabled    ${CONFIRM_ADD_PROPERTIES}    timeout=30
+    run keyword and ignore error  Click Element    ${CONFIRM_ADD_PROPERTIES}
     Sleep    2
     Wait Until Element Is Enabled    ${SAVE_CLASS}    timeout=30
     Click Element    ${SAVE_CLASS}
@@ -747,8 +747,10 @@ Create New Attribute
     Click Element    ${ATTRIBUTE_TAB}
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
+    Sleep  10
     Wait Until Element Is Visible    ${CREATE_PREDICATE_BTN}    timeout=30
     Click Element    ${CREATE_PREDICATE_BTN}
     Wait Until Page Contains Element    ${CREATE_NEW_ATTRIBUTE_WITHOUT_REF_LINK}    timeout=30
@@ -767,8 +769,10 @@ Add Sub Attribute
     [Arguments]    ${model}    ${attribute}    ${attribute_link}
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${attribute_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${attribute_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -780,8 +784,10 @@ Add Super Attribute
     [Arguments]    ${model}    ${attribute}    ${attribute_link}
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${attribute_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${attribute_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -793,8 +799,10 @@ Copy Attribute
     [Arguments]    ${model}    ${attribute}    ${attribute_link}
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${attribute_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${attribute_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -808,8 +816,10 @@ Create new association
     Click Element    ${ASSOCIATION_TAB}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  10
     Wait Until Element Is Visible    ${CREATE_PREDICATE_BTN}    timeout=30
     Click Element    ${CREATE_PREDICATE_BTN}
     Wait Until Page Contains Element    ${CREATE_NEW_ASSOCIATION_WITHOUT_REF_LINK}    timeout=30
@@ -871,8 +881,10 @@ Add Sub Association
     [Arguments]    ${model}    ${association}    ${association_link}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${association_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${association_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -884,8 +896,10 @@ Copy Association
     [Arguments]    ${model}    ${association}    ${association_link}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${association_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${association_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -897,8 +911,10 @@ Add Super Association
     [Arguments]    ${model}    ${association}    ${association_link}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  10
     Wait Until Element Is Enabled    //*[contains(@id,'${association_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${association_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -1050,8 +1066,10 @@ Add Property For Class
     Click Element    ${ADD_PROPERTY_DDL}
     Wait Until Element Is Enabled    ${ADD_PROPERTY_BTN}    timeout=30
     Click Element    ${ADD_PROPERTY_BTN}
+    Sleep  10
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${property}
+    Sleep  10
     Wait Until Element Is Enabled    ${CREATE_NEW_ATTRIBUTE_LINK}    timeout=30
     Click Element    ${CREATE_NEW_ATTRIBUTE_LINK}
     Wait Until Element Is Enabled    ${CREATE_NEW_ATTRIBUTE_WITHOUT_REF_LINK}    timeout=30
