@@ -3,6 +3,7 @@ Documentation     Resource file for Datamodel application
 Library           SeleniumLibrary
 
 *** Variables ***
+${Sleep Timeout}  10
 ${SELENIUM_SPEED}    0.5
 ${BROWSER}        chrome
 ${DATA_VOCABULARIES_ENVIRONMENT_URL}    https://tietomallit.dev.yti.cloud.vrk.fi/
@@ -681,8 +682,10 @@ Add Attribute
     Sleep    2
     Wait Until Element Is Enabled    //*[contains(text(), "Attribuutti")]    timeout=30
     Click Element    //*[contains(text(), "Attribuutti")]
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${SEARCH_ATTRIBUTE_INPUT}    timeout=30
     Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${attribute}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(text(), "${attribute}")]    timeout=30
     Click Element    //*[contains(text(), "${attribute}")]
     Wait Until Element Is Enabled    ${CONFIRM_PREDICATE_BTN}    timeout=30
@@ -696,8 +699,10 @@ Create New Attribute
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
+    Sleep  ${Sleep Timeout}
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
     Wait Until Element Is Visible    ${CREATE_PREDICATE_BTN}    timeout=30
+    Sleep  ${Sleep Timeout}
     Click Element    ${CREATE_PREDICATE_BTN}
     Wait Until Page Contains Element    ${CREATE_NEW_ATTRIBUTE_WITHOUT_REF_LINK}    timeout=30
     Click Element    ${CREATE_NEW_ATTRIBUTE_WITHOUT_REF_LINK}
@@ -716,8 +721,10 @@ Add Sub Attribute
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
+    Sleep  ${Sleep Timeout}
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
     Wait Until Element Is Enabled    //*[contains(@id,'${attribute_link}_search_class_link')]    timeout=60
+    Sleep  ${Sleep Timeout}
     Click Element    //*[contains(@id,'${attribute_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
     Click Element    ${ACTIONS_BTN}
@@ -729,8 +736,10 @@ Add Super Attribute
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
+    Sleep  ${Sleep Timeout}
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
     Wait Until Element Is Enabled    //*[contains(@id,'${attribute_link}_search_class_link')]    timeout=60
+    Sleep  ${Sleep Timeout}
     Click Element    //*[contains(@id,'${attribute_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
     Click Element    ${ACTIONS_BTN}
@@ -742,8 +751,10 @@ Copy Attribute
     Wait Until Page Contains Element    ${ADD_NEW_ATTRIBUTE_BTN}    timeout=30
     Click Element    ${ADD_NEW_ATTRIBUTE_BTN}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
+    Sleep  ${Sleep Timeout}
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${attribute}
     Wait Until Element Is Enabled    //*[contains(@id,'${attribute_link}_search_class_link')]    timeout=60
+    Sleep  ${Sleep Timeout}
     Click Element    //*[contains(@id,'${attribute_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
     Click Element    ${ACTIONS_BTN}
@@ -756,8 +767,10 @@ Create new association
     Click Element    ${ASSOCIATION_TAB}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Visible    ${CREATE_PREDICATE_BTN}    timeout=30
     Click Element    ${CREATE_PREDICATE_BTN}
     Wait Until Page Contains Element    ${CREATE_NEW_ASSOCIATION_WITHOUT_REF_LINK}    timeout=30
@@ -786,8 +799,10 @@ Add Association
     Sleep    3
     Wait Until Element Is Enabled    //*[contains(text(), "Assosiaatio")]    timeout=30
     Click Element    //*[contains(text(), "Assosiaatio")]
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${SEARCH_ATTRIBUTE_INPUT}    timeout=30
     Input Text    ${SEARCH_ATTRIBUTE_INPUT}    ${association}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(text(), "${association}")]    timeout=30
     Click Element    //*[contains(text(), "${association}")]
     Wait Until Element Is Enabled    ${CONFIRM_PREDICATE_BTN}    timeout=30
@@ -798,8 +813,10 @@ Add Sub Association
     [Arguments]    ${model}    ${association}    ${association_link}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(@id,'${association_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${association_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -811,8 +828,10 @@ Copy Association
     [Arguments]    ${model}    ${association}    ${association_link}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(@id,'${association_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${association_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -824,8 +843,10 @@ Add Super Association
     [Arguments]    ${model}    ${association}    ${association_link}
     Wait Until Page Contains Element    ${ADD_NEW_ASSOCIATION_BTN}    timeout=30
     Click Element    ${ADD_NEW_ASSOCIATION_BTN}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${association}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(@id,'${association_link}_search_class_link')]    timeout=60
     Click Element    //*[contains(@id,'${association_link}_search_class_link')]
     Wait Until Element Is Enabled    ${ACTIONS_BTN}    timeout=30
@@ -837,8 +858,10 @@ Change concept for class
     [Arguments]    ${concept}
     Wait Until Page Contains Element    ${CHANGE_CONCEPT}    timeout=30
     Click Element    ${CHANGE_CONCEPT}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${SEARCH_CONCEPT_DB_INPUT}    timeout=30
     Input Text    ${SEARCH_CONCEPT_DB_INPUT}    ${concept}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    //*[contains(text(), "${concept}")]    timeout=30
     Click Element    //*[contains(text(), "${concept}")]
     Sleep    2
@@ -850,9 +873,10 @@ Create New Class Without Referencing Concept
     [Arguments]    ${class}
     Wait Until Page Contains Element    ${ADD_NEW_CLASS}    timeout=30
     Click Element    ${ADD_NEW_CLASS}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    2
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${CREATE_NEW_CLASS_LINK}    timeout=60
     Click Element    ${CREATE_NEW_CLASS_LINK}
     Wait Until Element Is Enabled    ${CREATE_NEW_CLASS_WITHOUT_REF_LINK}    timeout=60
@@ -868,15 +892,18 @@ Create new class and suggest concept to terminologies
     [Arguments]    ${class}    ${concept_definition}
     Wait Until Page Contains Element    ${ADD_NEW_CLASS}    timeout=30
     Click Element    ${ADD_NEW_CLASS}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    2
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${CREATE_NEW_CLASS_LINK}    timeout=30
     Click Element    ${CREATE_NEW_CLASS_LINK}
     Wait Until Page Contains Element    ${SUGGEST_CONCEPT_TO_TERMINOLOGIES}    timeout=30
     Click Element    ${SUGGEST_CONCEPT_TO_TERMINOLOGIES}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${CONCEPT_DEFINITION_INPUT}    timeout=30
     Input Text    ${CONCEPT_DEFINITION_INPUT}    ${concept_definition}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${CREATE_NEW_CLASS_BTN}    timeout=30
     Click Element    ${CREATE_NEW_CLASS_BTN}
     Sleep    2
@@ -885,16 +912,17 @@ Create New Shape By Referencing External Uri
     [Arguments]    ${external_uri}    ${class}
     Wait Until Page Contains Element    ${ADD_NEW_CLASS}    timeout=30
     Click Element    ${ADD_NEW_CLASS}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${SEARCH_CLASS_INPUT}    timeout=30
     Input Text    ${SEARCH_CLASS_INPUT}    ${class}
-    Sleep    3
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${CREATE_NEW_SHAPE_BY_REF_URI}    timeout=30
     Sleep    1
     Click Element    ${CREATE_NEW_SHAPE_BY_REF_URI}
-    Sleep    3
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${EXTERNAL_URI_INPUT}    timeout=60
     Input Text    ${EXTERNAL_URI_INPUT}    ${external_uri}
-    Sleep    3
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Visible    ${USE_SELECTION_BTN}    timeout=30
     Click Element    ${USE_SELECTION_BTN}
     Sleep    2
@@ -902,9 +930,10 @@ Create New Shape By Referencing External Uri
 Delete profile
     [Arguments]    ${profile}
     Select user    ${TEST_ADMIN_ID}    ${TEST_ADMIN_NAME}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${FRONTPAGE_SEARCH_BOX}    timeout=30
     Input Text    ${FRONTPAGE_SEARCH_BOX}    ${profile}
-    Sleep    1
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(text(), "${profile}")]    timeout=30
     Click Element    //*[contains(text(), "${profile}")]
     Wait Until Page Contains Element    ${MODEL_DETAILS_TAB}    timeout=30
@@ -913,9 +942,10 @@ Delete profile
     Click Element    ${REMOVE_MODEL_BTN}
     Wait Until Page Contains Element    ${CONFIRM_REMOVE_MODEL_BTN}    timeout=30
     Click Element    ${CONFIRM_REMOVE_MODEL_BTN}
-    Sleep    2
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${FRONTPAGE_SEARCH_BOX}    timeout=60
     Input Text    ${FRONTPAGE_SEARCH_BOX}    ${profile}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains    tietomallia    timeout=30
     Log To Console    "${profile}" profile deleted
     Sleep    2
@@ -924,8 +954,10 @@ Delete profile
 Delete Profile And Leave Browser Open
     [Arguments]    ${profile}
     Select user    ${TEST_ADMIN_ID}    ${TEST_ADMIN_NAME}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${FRONTPAGE_SEARCH_BOX}    timeout=30
     Input Text    ${FRONTPAGE_SEARCH_BOX}    ${profile}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    //*[contains(text(), "${profile}")]    timeout=30
     Click Element    //*[contains(text(), "${profile}")]
     Wait Until Page Contains Element    ${MODEL_DETAILS_TAB}    timeout=30
@@ -934,9 +966,10 @@ Delete Profile And Leave Browser Open
     Click Element    ${REMOVE_MODEL_BTN}
     Wait Until Page Contains Element    ${CONFIRM_REMOVE_MODEL_BTN}    timeout=30
     Click Element    ${CONFIRM_REMOVE_MODEL_BTN}
-    Sleep    2
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${FRONTPAGE_SEARCH_BOX}    timeout=60
     Input Text    ${FRONTPAGE_SEARCH_BOX}    ${profile}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains    tietomallia    timeout=30
     Log To Console    "${profile}" profile deleted
     Sleep    2
@@ -974,8 +1007,10 @@ Add Property For Class
     Click Element    ${ADD_PROPERTY_DDL}
     Wait Until Element Is Enabled    ${ADD_PROPERTY_BTN}    timeout=30
     Click Element    ${ADD_PROPERTY_BTN}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${TEXT_FILTER_SEARCH_INPUT}    timeout=30
     Input Text    ${TEXT_FILTER_SEARCH_INPUT}    ${property}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${CREATE_NEW_ATTRIBUTE_LINK}    timeout=30
     Click Element    ${CREATE_NEW_ATTRIBUTE_LINK}
     Wait Until Element Is Enabled    ${CREATE_NEW_ATTRIBUTE_WITHOUT_REF_LINK}    timeout=30
@@ -1004,6 +1039,7 @@ Create New Namespace
     Click Element    ${IMPORT_NAMESPACE}
     Wait Until Element Is Enabled    ${CREATE_NEW_NAMESPACE}    timeout=30
     Click Element    ${CREATE_NEW_NAMESPACE}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${NAMESPACE_LABEL}    timeout=30
     Input Text    ${NAMESPACE_LABEL}    ${label}
     Wait Until Element Is Enabled    ${NAMESPACE_VALUE}    timeout=30
@@ -1011,12 +1047,14 @@ Create New Namespace
     Wait Until Element Is Enabled    ${NAMESPACE_PREFIX}    timeout=30
     Input Text    ${NAMESPACE_PREFIX}    ${prefix}
     Wait Until Element Is Enabled    ${NAMESPACE_CREATE}    timeout=30
+    Sleep  ${Sleep Timeout}
     Click Element    ${NAMESPACE_CREATE}
 
 Add Link
     [Arguments]    ${url}    ${name}    ${description}
     Wait Until Element Is Enabled    ${ADD_LINK}    timeout=30
     Click Element    ${ADD_LINK}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${LINK_URL_INPUT}    timeout=30
     Input Text    ${LINK_URL_INPUT}    ${url}
     Wait Until Element Is Enabled    ${LINK_NAME_INPUT}    timeout=30
@@ -1024,6 +1062,7 @@ Add Link
     Wait Until Element Is Enabled    ${LINK_DESCRIPTION_INPUT}    timeout=30
     Input Text    ${LINK_DESCRIPTION_INPUT}    ${description}
     Wait Until Element Is Enabled    ${CREATE_NEW_LINK}    timeout=30
+    Sleep  ${Sleep Timeout}
     Click Element    ${CREATE_NEW_LINK}
     Wait Until Page Does Not Contain Element    ${OPEN_LINK_MODAL}    timeout=120
     Log To Console    New link added
@@ -1173,9 +1212,11 @@ Create New Version
     Click Element    ${MODEL_ACTION_MENU}
     Wait Until Element Is Enabled    ${CREATE_NEW_VERSION_BTN}    timeout=20
     Click Element    ${CREATE_NEW_VERSION_BTN}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    ${NEW_VERSION_PREFIX_INPUT}    timeout=20
     Input Text    ${NEW_VERSION_PREFIX_INPUT}    ${prefix}
     Wait Until Element Is Enabled    ${SAVE_NEW_VERSION_BTN}    timeout=20
+    Sleep  ${Sleep Timeout}
     Click Element    ${SAVE_NEW_VERSION_BTN}
     Wait Until Element Is Enabled    ${CONFIRM_ALERT_BTN}    timeout=20
     Click Element    ${CONFIRM_ALERT_BTN}
@@ -1184,8 +1225,10 @@ Create New Version
 Delete Versions
     [Arguments]    ${profile}
     Select user    ${TEST_ADMIN_ID}    ${TEST_ADMIN_NAME}
+    Sleep  ${Sleep Timeout}
     Wait Until Page Contains Element    ${FRONTPAGE_SEARCH_BOX}    timeout=30
     Input Text    ${FRONTPAGE_SEARCH_BOX}    ${profile}
+    Sleep  ${Sleep Timeout}
     Wait Until Element Is Enabled    //*[contains(text(), "${profile}")]    timeout=30
     Click Element    //*[contains(text(), "${profile}")]
     Wait Until Element Is Enabled    ${MODEL_DETAILS_TAB}    timeout=30
@@ -1194,11 +1237,11 @@ Delete Versions
     Click Element    ${REMOVE_MODEL_BTN}
     Wait Until Element Is Enabled    ${CONFIRM_REMOVE_MODEL_BTN}    timeout=30
     Click Element    ${CONFIRM_REMOVE_MODEL_BTN}
-    Sleep    2
+    Sleep  ${Sleep Timeout}
     Log To Console    Profile version deleted
     Wait Until Element Is Enabled    ${FRONTPAGE_SEARCH_BOX}    timeout=60
     Input Text    ${FRONTPAGE_SEARCH_BOX}    ${profile}
-    Sleep    1
+    Sleep  ${Sleep Timeout}
     ${profileExists}=    Run Keyword And Return Status    Page Should Contain Element    //*[contains(text(), "${profile}")]
     Run Keyword If    ${profileExists}    Delete Versions    ${profile}
     ...    ELSE    Close All Browsers
