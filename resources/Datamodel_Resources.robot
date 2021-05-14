@@ -647,8 +647,8 @@ Save Class
     Sleep    2
 
 Confirm All Properties For Class And Save
-    Wait Until Element Is Enabled    ${CONFIRM_ADD_PROPERTIES}    timeout=30
-    Click Element    ${CONFIRM_ADD_PROPERTIES}
+    Run keyword and ignore error  Wait Until Element Is Enabled    ${CONFIRM_ADD_PROPERTIES}    timeout=30
+    Run keyword and ignore error  Click Element    ${CONFIRM_ADD_PROPERTIES}
     Sleep    2
     Wait Until Element Is Enabled    ${SAVE_CLASS}    timeout=30
     Click Element    ${SAVE_CLASS}
